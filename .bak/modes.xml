@@ -5,7 +5,6 @@
 
   <mode name="ain-jpn" install="yes" gendebug="yes">
     <pipeline>
-
       <program name="lt-proc -w">
         <file name="ain-jpn.automorf.bin"/>
       </program>
@@ -37,10 +36,10 @@
         <file name="apertium-ain-jpn.ain-jpn.t3x"/>
         <file name="ain-jpn.t3x.bin"/>
       </program>
-
       <program name="lt-proc $1">
         <file name="ain-jpn.autogen.bin"/>
       </program>
+
       <program name="lt-proc -p">
         <file name="ain-jpn.autopgen.bin"/>
       </program>
@@ -51,7 +50,6 @@
 
   <mode name="jpn-ain" install="yes" gendebug="yes">
     <pipeline>
-
       <program name="lt-proc -w">
         <file name="jpn-ain.automorf.bin"/>
       </program>
@@ -84,10 +82,10 @@
         <file name="apertium-ain-jpn.jpn-ain.t3x"/>
         <file name="jpn-ain.t3x.bin"/>
       </program>
-
       <program name="lt-proc $1">
         <file name="jpn-ain.autogen.bin"/>
       </program>
+
       <program name="lt-proc -p">
         <file name="jpn-ain.autopgen.bin"/>
       </program>

@@ -38,8 +38,6 @@ TARGETS_COMMON =		\
 ## Monolingual transducers
 ###############################################################################
 
-
-
 # -------------------
 # Ainu analysis:
 # -------------------
@@ -70,7 +68,6 @@ $(PREFIX1).automorf.bin: .deps/$(LANG1).automorf.hfst .deps/$(PREFIX1).autobil.p
 
 $(PREFIX2).autogen.hfst: $(AP_SRC1)/$(LANG1).autogen.hfst
 	cp $< $@
-
 
 $(PREFIX2).autogen.bin: $(AP_SRC1)/$(LANG1).autogen.bin
 	cp $< $@
@@ -106,7 +103,6 @@ $(PREFIX2).automorf.bin: .deps/$(LANG2).automorf.hfst .deps/$(PREFIX2).autobil.p
 $(PREFIX1).autogen.hfst: $(AP_SRC2)/$(LANG2).autogen.hfst
 	cp $< $@
 
-
 $(PREFIX1).autogen.bin: $(AP_SRC2)/$(LANG2).autogen.bin
 	cp $< $@
 
@@ -124,10 +120,8 @@ $(PREFIX2).prob: $(AP_SRC2)/$(LANG2).prob
 ## Disambiguation rules
 ###############################################################################
 
-
 $(PREFIX1).rlx.bin: $(AP_SRC1)/apertium-$(LANG1).$(LANG1).rlx
 	cg-comp $< $@
-
 
 $(PREFIX2).rlx.bin: $(AP_SRC2)/apertium-$(LANG2).$(LANG2).rlx
 	cg-comp $< $@
@@ -248,10 +242,10 @@ clean-local:
 ###############################################################################
 
 test: all
-	echo "house" | apertium -d . -f line ain-jpn | tee .test-mt
+	echo "house" | apertium -d . ain-jpn | tee .test-mt
 	@echo "house" > .test-ref
 	@diff .test-ref .test-mt
-	echo "house" | apertium -d . -f line jpn-ain | tee .test-mt
+	echo "house" | apertium -d . jpn-ain | tee .test-mt
 	@echo "house" > .test-ref
 	@diff .test-ref .test-mt
 	@rm .test-ref .test-mt
