@@ -65,8 +65,8 @@ $(PREFIX1).automorf.bin: .deps/$(LANG1).automorf.hfst .deps/$(PREFIX1).autobil.p
 	hfst-fst2txt -i .deps/$(PREFIX1).automorf.trimmed -o .deps/$(PREFIX1).automorf.trimmed.att
 	lt-comp lr .deps/$(PREFIX1).automorf.trimmed.att $@
 
-$(PREFIX1).automorf.hfst: .deps/$(PREFIX1).automorf.trimmed.att
-	hfst-txt2fst .deps/ain-jpn.automorf.trimmed.att -o ain-jpn.automorf.hfst -f olw
+$(PREFIX1).automorf.hfst: $(AP_SRC1)/$(LANG1).automorf.hfst
+	cp $< $@
 
 # -------------------
 # Ainu generation:
